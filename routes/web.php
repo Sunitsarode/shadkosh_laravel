@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AppBaseController;
+//use App\Http\Controllers\AppBaseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -134,5 +134,7 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
 });
 
 Route::redirect('/php', '/phpinfo', 301);
-Auth::routes();
+
+
 Route::resource('categories', App\Http\Controllers\CategoryController::class);
+Route::resource('words', App\Http\Controllers\WordController::class);
